@@ -9,6 +9,7 @@ import { PannelComponent } from './pannel/pannel.component';
 import { CardComponent } from './card/card.component';
 import { ColorButtonComponent } from './color-button/color-button.component';
 import { LearningNGComponent } from './learning-ng/learning-ng.component';
+import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { LearningNGComponent } from './learning-ng/learning-ng.component';
     CardComponent,
     ColorButtonComponent,
     LearningNGComponent,
+    LifecycleHooksComponent,
   ],
   imports: [
     BrowserModule,

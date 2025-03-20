@@ -9,9 +9,9 @@
     <app-card>
        <p title>This is 2</p> 
     </app-card>
-</div> -->
+</div> 
 
-<!-- <h1>Testing..</h1>
+<h1>Testing..</h1>
 <app-profile 
 [Hi]="value"
 [title]="title"
@@ -19,9 +19,13 @@
 <app-getter-input [title]="title"></app-getter-input>
 <app-pannel (meroEvent)="dataReceived($event)" />
 
-<div *ngIf="receivedDataFromChild">{{receivedDataFromChild}}</div> -->
+<div *ngIf="receivedDataFromChild">{{receivedDataFromChild}}</div>
 
-<!-- <app-color-button /> -->
+<app-color-button />
 
+<app-learning-ng /> -->
 
-<app-learning-ng />
+<div *ngIf="isActive">
+    <app-lifecycle-hooks [message]="title" />
+    <button (click)="destroyHook()">Destroy</button>
+</div>
