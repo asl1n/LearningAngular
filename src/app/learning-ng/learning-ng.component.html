@@ -1,0 +1,19 @@
+<button [ngClass]="{ 'active': isActive, 'inactive': !isActive }" (click)="toggleButton()">
+    Toggle using ngClass
+  </button>
+
+  <p *ngIf="!isActive">Service <span [ngStyle]="{'color': 'red'}">Off</span></p>
+  
+  <div *ngIf="isActive">
+  <div [ngSwitch]="userStatus" [ngStyle]="{'color': Aslin}">
+    <p *ngSwitchCase="'admin'">Welcome, Admin! You have full access.</p>
+    <p *ngSwitchCase="'user'">Welcome, User! You have limited access.</p>
+    <p *ngSwitchCase="'guest'">Welcome, Guest! Please log in to continue.</p>
+    <p *ngSwitchDefault>Unknown user status.</p>
+  </div>
+  
+  <ul>
+    <li *ngFor="let product of products">{{ product }}</li>
+  </ul>
+    </div>
+  

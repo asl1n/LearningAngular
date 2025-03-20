@@ -7,6 +7,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { GetterInputComponent } from './getter-input/getter-input.component';
 import { PannelComponent } from './pannel/pannel.component';
 import { CardComponent } from './card/card.component';
+import { ColorButtonComponent } from './color-button/color-button.component';
+import { LearningNGComponent } from './learning-ng/learning-ng.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { CardComponent } from './card/card.component';
     ProfileComponent,
     GetterInputComponent,
     PannelComponent,
-    CardComponent
+    CardComponent,
+    ColorButtonComponent,
+    LearningNGComponent,
   ],
   imports: [
     BrowserModule,
