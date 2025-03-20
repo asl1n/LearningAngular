@@ -1,2 +1,9 @@
 <h1>Testing..</h1>
-<app-profile [count]="value"></app-profile>
+<app-profile 
+[Hi]="value"
+[title]="title"
+/>
+<app-getter-input [title]="title"></app-getter-input>
+<app-pannel (meroEvent)="dataReceived($event)" />
+
+<div *ngIf="receivedDataFromChild">{{receivedDataFromChild}}</div>

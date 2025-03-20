@@ -5,3 +5,4 @@ export function count(value : number){
 export function trimValue(value : string){
     return value.trim();
 }
+
