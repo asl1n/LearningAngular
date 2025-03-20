@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GetterInputComponent } from './getter-input/getter-input.component';
 import { PannelComponent } from './pannel/pannel.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     GetterInputComponent,
-    PannelComponent
+    PannelComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
