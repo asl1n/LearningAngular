@@ -1,5 +1,7 @@
 import { Component, QueryList, ViewChildren } from '@angular/core';
 import { TaskcomponentComponent } from './taskcomponent/taskcomponent.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +14,13 @@ export class AppComponent {
   receivedDataFromChild= '';
   isActive : boolean = true;
   tasks = ['task1', 'task2', 'task3', 'task4', 'task5'];
+  adminDaju= true;
 
   @ViewChildren(TaskcomponentComponent) taskComponents !:QueryList <TaskcomponentComponent>;
 
-
+  getProfileComponent(){
+    return this.adminDaju? AdminProfileComponent : UserProfileComponent;
+  }
 
   ngAfterViewInit(){
     // console.log(this.taskComponents.map(task => task.taskName));

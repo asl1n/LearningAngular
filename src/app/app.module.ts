@@ -17,6 +17,8 @@ import { HighlightDirective } from './highlight.directive';
 import { TaskcomponentComponent } from './taskcomponent/taskcomponent.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { ChildComponent } from './child/child.component';
     TaskcomponentComponent,
     ParentComponent,
     ChildComponent,
+    AdminProfileComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
