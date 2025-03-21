@@ -10,6 +10,11 @@ import { CardComponent } from './card/card.component';
 import { ColorButtonComponent } from './color-button/color-button.component';
 import { LearningNGComponent } from './learning-ng/learning-ng.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { PlayingAroundComponent } from './playing-around/playing-around.component';
+import { FormsModule } from '@angular/forms';
+import { ViewExampleComponent } from './view-example/view-example.component';
+import { HighlightDirective } from './highlight.directive';
+import { TaskcomponentComponent } from './taskcomponent/taskcomponent.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +26,15 @@ import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.compo
     ColorButtonComponent,
     LearningNGComponent,
     LifecycleHooksComponent,
+    PlayingAroundComponent,
+    ViewExampleComponent,
+    HighlightDirective,
+    TaskcomponentComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

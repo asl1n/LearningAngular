@@ -25,7 +25,14 @@
 
 <app-learning-ng /> -->
 
-<div *ngIf="isActive">
+<!-- <div *ngIf="isActive">
     <app-lifecycle-hooks [message]="title" />
     <button (click)="destroyHook()">Destroy</button>
+</div> -->
+
+
+<!-- <app-view-example /> -->
+
+<div>
+    <app-taskcomponent *ngFor="let task of tasks" [taskName]="task"/>
 </div>

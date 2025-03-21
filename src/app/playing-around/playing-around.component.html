@@ -1,0 +1,8 @@
+<p *ngIf="submitted">Your message has been sent successfully!</p>
+
+<div *ngIf="!submitted">
+  <form (ngSubmit)="formPathau()">
+    <input type="text" placeholder="Anything...." [(ngModel)]="message" name="message" required>
+    <button type="submit">Submit</button>
+  </form>
+</div>
