@@ -19,6 +19,8 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { DynamicComponent } from './dynamic/dynamic.component';
+import { HostComponent } from './host/host.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     ChildComponent,
     AdminProfileComponent,
     UserProfileComponent,
+    DynamicComponent,
+    HostComponent,
   ],
   imports: [
     BrowserModule,
