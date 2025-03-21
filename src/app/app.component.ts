@@ -18,8 +18,22 @@ export class AppComponent {
 
   @ViewChildren(TaskcomponentComponent) taskComponents !:QueryList <TaskcomponentComponent>;
 
-  getProfileComponent(){
-    return this.adminDaju? AdminProfileComponent : UserProfileComponent;
+  checkProfile: {
+    new (): UserProfileComponent | AdminProfileComponent;
+  } | null;
+
+  async getProfileComponent(){
+    if(this.adminDaju){
+      const {AdminProfileComponent} = await import('./admin-profile/admin-profile.component');
+    this.checkProfile = AdminProfileComponent;
+    } else {
+      const {UserProfileComponent} = await import('./user-profile/user-profile.component');
+    }
+    this.checkProfile = UserProfileComponent;
+  }
+
+  ngOnInit(){
+    this.getProfileComponent();
   }
 
   ngAfterViewInit(){

@@ -21,6 +21,7 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DynamicComponent } from './dynamic/dynamic.component';
 import { HostComponent } from './host/host.component';
+import { CheckProfileComponent } from './check-profile/check-profile.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { HostComponent } from './host/host.component';
     UserProfileComponent,
     DynamicComponent,
     HostComponent,
+    CheckProfileComponent,
   ],
   imports: [
     BrowserModule,
