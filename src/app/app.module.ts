@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { ViewExampleComponent } from './view-example/view-example.component';
 import { HighlightDirective } from './highlight.directive';
 import { TaskcomponentComponent } from './taskcomponent/taskcomponent.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { TaskcomponentComponent } from './taskcomponent/taskcomponent.component'
     ViewExampleComponent,
     HighlightDirective,
     TaskcomponentComponent,
+    ParentComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,
