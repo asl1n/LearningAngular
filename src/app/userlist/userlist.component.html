@@ -1,0 +1,5 @@
+<p>Hamro Users haru:</p>
+
+<div *ngFor="let user of testUsers">
+    <p>{{ user.name }} is {{ user.age }} years old. <span [ngStyle]="{'color': 'red', 'cursor': 'pointer', 'font-weight': 'bold', 'margin-left': '10px'}" (click)="removeUser(user.id)">Remove</span></p>
+    </div>
