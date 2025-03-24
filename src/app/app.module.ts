@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GetterInputComponent } from './getter-input/getter-input.component';
@@ -11,7 +13,6 @@ import { ColorButtonComponent } from './color-button/color-button.component';
 import { LearningNGComponent } from './learning-ng/learning-ng.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 import { PlayingAroundComponent } from './playing-around/playing-around.component';
-import { FormsModule } from '@angular/forms';
 import { ViewExampleComponent } from './view-example/view-example.component';
 import { HighlightDirective } from './highlight.directive';
 import { TaskcomponentComponent } from './taskcomponent/taskcomponent.component';
@@ -50,7 +51,8 @@ import { UserlistComponent } from './userlist/userlist.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

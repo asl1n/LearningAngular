@@ -10,13 +10,13 @@ import { UserKoType } from './UserKoType';
 export class UserlistComponent {
 newUserName: string = '';
 newUserAge: number = 0;
-testUsers: UserKoType[] = [];
+hamroUsers: UserKoType[] = [];
 
 constructor(public userService: UserHaruService){}
 
 ngOnInit(): void {
   this.userService.getUsers().subscribe(users => {
-    this.testUsers = users;
+    this.hamroUsers = users;
   });
 }
 removeUser(id: string) : void {
