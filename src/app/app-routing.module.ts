@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserlistComponent } from './userlist/userlist.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { LearningRxjsComponent } from './learning-rxjs/learning-rxjs.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'users', pathMatch: 'full' },
   { path: 'users', component: UserlistComponent},
-  { path: 'userDetail', component: UserProfileComponent},
+  { path: 'rxjs', component: LearningRxjsComponent},
   { path: '**', redirectTo: 'users' }
 ];
 

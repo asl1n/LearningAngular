@@ -24,6 +24,7 @@ import { DynamicComponent } from './dynamic/dynamic.component';
 import { HostComponent } from './host/host.component';
 import { CheckProfileComponent } from './check-profile/check-profile.component';
 import { UserlistComponent } from './userlist/userlist.component';
+import { LearningRxjsComponent } from './learning-rxjs/learning-rxjs.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { UserlistComponent } from './userlist/userlist.component';
     HostComponent,
     CheckProfileComponent,
     UserlistComponent,
+    LearningRxjsComponent,
   ],
   imports: [
     BrowserModule,
