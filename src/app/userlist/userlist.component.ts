@@ -27,7 +27,7 @@ removeUser(id: string) : void {
 
 addUser(newUserName: string, newUserAge: number) : void {
   this.userService.addUser(this.newUserName, this.newUserAge).subscribe((newUser) => {
-    this.hamroUsers.push(newUser);
+    this.hamroUsers.push(newUser)
   });
 }
 
