@@ -1,5 +1,13 @@
 <p>Hamro Users haru:</p>
 
-<div *ngFor="let user of testUsers">
-    <p>{{ user.name }} is {{ user.age }} years old. <span [ngStyle]="{'color': 'red', 'cursor': 'pointer', 'font-weight': 'bold', 'margin-left': '10px'}" (click)="removeUser(user.id)">Remove</span></p>
+<div>
+<div *ngFor="let user of userService.testUsers">
+    <p [ngStyle]="{'display': 'flex', 'justify-content': 'Space-between', 'margin':'10px 100px'}">{{ user.name }} is {{ user.age }} years old. <span [ngStyle]="{'color': 'red', 'cursor': 'pointer', 'font-weight': 'bold', 'margin-left': '10px'}" (click)="removeUser(user.id)">Remove</span></p>
     </div>
+
+    <div>
+        <input type="text" [(ngModel)]="newUserName" placeholder="Enter name">
+        <input type="number" [(ngModel)]="newUserAge" placeholder="Enter age">
+        <button (click)="addUser()">Add User</button>
+    </div>
+</div>

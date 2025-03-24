@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserHaruService } from './user-haru.service';
 
 @Component({
   selector: 'app-userlist',
@@ -6,27 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./userlist.component.scss']
 })
 export class UserlistComponent {
-  testUsers = [
-    {
-    id: '1',
-    name: 'Aslin Dai',
-    age: '21'
-  },
-  {
-    id: '2',
-    name: 'Random Bhai',
-    age: '22'
-  },
-  {
-    id: '3',
-    name: 'Arko Random',
-    age: '24'
-  },
-]
+newUserName: string = '';
+newUserAge: number = 0;
+
+constructor(public userService: UserHaruService){}
 
 removeUser(id: string) : void {
-  this.testUsers = this.testUsers.filter(user => user.id !== id);
+  this.userService.removeUser(id);
 }
 
+addUser() : void {
+  this.userService.addUser(this.newUserName, this.newUserAge);
+}
 
 }
