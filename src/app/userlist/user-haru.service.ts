@@ -16,8 +16,8 @@ export class UserHaruService {
     return this.http.get<UserKoType[]>(this.apiUrl);
   }
 
-  removeUser(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  removeUser(id: string): Observable<{}> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
   addUser(name: string, age: number): Observable<UserKoType> {

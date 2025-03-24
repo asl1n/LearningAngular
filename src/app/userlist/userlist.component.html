@@ -8,6 +8,6 @@
     <div>
         <input type="text" [(ngModel)]="newUserName" placeholder="Enter name">
         <input type="number" [(ngModel)]="newUserAge" placeholder="Enter age">
-        <button (click)="addUser()">Add User</button>
+        <button (click)="addUser(newUserName, newUserAge)">Add User</button>
     </div>
 </div>
