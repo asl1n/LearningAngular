@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
+import { UserKoType } from './UserKoType';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserHaruService {
-  testUsers = [
-    { id: '1', name: 'Aslin Dai', age: '21' },
-    { id: '2', name: 'Random Bhai', age: '22' },
-    { id: '3', name: 'Arko Random', age: '24' },
+  testUsers : UserKoType[] = [
+    { id: '1', name: 'Aslin Dai', age: 21 },
+    { id: '2', name: 'Random Bhai', age: 22 },
+    { id: '3', name: 'Arko Random', age: 24 },
   ];
 
   constructor() {}
@@ -25,7 +26,7 @@ export class UserHaruService {
     this.testUsers.push({
       id: (this.testUsers.length + 1).toString(),
       name,
-      age: age.toString()
+      age
     });
     console.log('User added:', name);
   }
