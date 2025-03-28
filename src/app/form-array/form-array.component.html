@@ -1,10 +1,10 @@
 <div class="hobby-container">
-    <label for="hobby">Add your hobbies:</label>
+    <label for="hobby">Multiple inputs:</label>
     <input id="hobby" type="text" [formControl]="userInput" (keydown.enter)="addInput($event)" placeholder="Type and enter" />
   
     <div class="hobby-tags">
-      <span *ngFor="let hobby of inputs.controls; let i = index" class="tag">
-        {{ hobby.value }} 
+      <span *ngFor="let inputs of inputs.controls; let i = index" class="tag">
+        {{ inputs.value }} 
         <button (click)="removeInput(i)">x</button>
       </span>
     </div>
