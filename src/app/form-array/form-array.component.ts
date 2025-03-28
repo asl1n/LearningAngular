@@ -7,27 +7,27 @@ import { FormArray, FormBuilder, FormControl } from '@angular/forms';
   styleUrls: ['./form-array.component.scss']
 })
 export class formArrayComponent {
-  hobbyInput = new FormControl('');
-  hobbiesForm = this.fb.group({
-    hobbies: this.fb.array([])
+  userInput = new FormControl('');
+  inputForm = this.fb.group({
+    inputs: this.fb.array([])
   });
 
   constructor(private fb: FormBuilder) {}
 
-  get hobbies() {
-    return this.hobbiesForm.get('hobbies') as FormArray;
+  get inputs() {
+    return this.inputForm.get('inputs') as FormArray;
   }
 
-  addHobby(event: Event) {
+  addInput(event: Event) {
     event.preventDefault();
-    const hobbyValue = this.hobbyInput.value?.trim();
+    const hobbyValue = this.userInput.value?.trim();
     if (hobbyValue) {
-      this.hobbies.push(new FormControl(hobbyValue));
-      this.hobbyInput.reset();
+      this.inputs.push(new FormControl(hobbyValue));
+      this.userInput.reset();
     }
   }
 
-  removeHobby(index: number) {
-    this.hobbies.removeAt(index);
+  removeInput(index: number) {
+    this.inputs.removeAt(index);
   }
 }
