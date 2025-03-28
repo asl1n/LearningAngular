@@ -20,9 +20,9 @@ export class formArrayComponent {
 
   addInput(event: Event) {
     event.preventDefault();
-    const hobbyValue = this.userInput.value?.trim();
-    if (hobbyValue) {
-      this.inputs.push(new FormControl(hobbyValue));
+    const inputValue = this.userInput.value?.trim();
+    if (inputValue) {
+      this.inputs.push(new FormControl(inputValue));
       this.userInput.reset();
     }
   }

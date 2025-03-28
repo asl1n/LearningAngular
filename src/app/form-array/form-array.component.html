@@ -1,12 +1,11 @@
-<div class="hobby-container">
-    <label for="hobby">Multiple inputs:</label>
-    <input id="hobby" type="text" [formControl]="userInput" (keydown.enter)="addInput($event)" placeholder="Type and enter" />
+<div class="input-container">
+    <label for="input">Multiple inputs:</label>
+    <input id="input" type="text" [formControl]="userInput" (keydown.enter)="addInput($event)" placeholder="Type and enter" />
   
-    <div class="hobby-tags">
+    <div class="input-tags">
       <span *ngFor="let inputs of inputs.controls; let i = index" class="tag">
         {{ inputs.value }} 
         <button (click)="removeInput(i)">x</button>
       </span>
     </div>
   </div>
-  
