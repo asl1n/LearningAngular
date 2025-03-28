@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormControl } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-array',
@@ -7,7 +7,7 @@ import { FormArray, FormBuilder, FormControl } from '@angular/forms';
   styleUrls: ['./form-array.component.scss']
 })
 export class formArrayComponent {
-  userInput = new FormControl('');
+  userInput = new FormControl('', [Validators.minLength(3)]);
   inputForm = this.fb.group({
     inputs: this.fb.array([])
   });
@@ -21,8 +21,8 @@ export class formArrayComponent {
   addInput(event: Event) {
     event.preventDefault();
     const inputValue = this.userInput.value?.trim();
-    if (inputValue) {
-      this.inputs.push(new FormControl(inputValue));
+    if (inputValue && this.userInput.valid) { 
+      this.inputs.push(new FormControl(inputValue)); 
       this.userInput.reset();
     }
   }
