@@ -1,0 +1,12 @@
+<div class="hobby-container">
+    <label for="hobby">Add your hobbies:</label>
+    <input id="hobby" type="text" [formControl]="hobbyInput" (keydown.enter)="addHobby($event)" placeholder="Type and press Enter" />
+  
+    <div class="hobby-tags">
+      <span *ngFor="let hobby of hobbies.controls; let i = index" class="tag">
+        {{ hobby.value }} 
+        <button (click)="removeHobby(i)">x</button>
+      </span>
+    </div>
+  </div>
+  

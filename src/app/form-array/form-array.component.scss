@@ -1,0 +1,34 @@
+.hobby-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+  
+    input {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  
+    .hobby-tags {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      
+      .tag {
+        background: #007bff;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 2px;
+  
+        button {
+          background: transparent;
+          border: none;
+          color: white;
+          margin-left: 2px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  

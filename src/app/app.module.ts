@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { counter} from './NGRX/main/counter/counter.reducer';
 
@@ -28,6 +28,7 @@ import { CheckProfileComponent } from './check-profile/check-profile.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { LearningRxjsComponent } from './learning-rxjs/learning-rxjs.component';
 import { MainComponent } from './NGRX/main/main.component';
+import { formArrayComponent } from './form-array/form-array.component';
 
 @NgModule({
   declarations: [
@@ -53,13 +54,15 @@ import { MainComponent } from './NGRX/main/main.component';
     UserlistComponent,
     LearningRxjsComponent,
     MainComponent,
+    formArrayComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ count: counter })
+    StoreModule.forRoot({ count: counter }),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
