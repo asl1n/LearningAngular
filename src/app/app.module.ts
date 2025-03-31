@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { counter} from './NGRX/main/counter/counter.reducer';
+import { counter } from './NGRX/main/counter/counter.reducer';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -32,6 +32,7 @@ import { formArrayComponent } from './form-array/form-array.component';
 import { MeroFormComponent } from './mero-form/mero-form.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { PostComponent } from './post/post/post.component';
 
 @NgModule({
   declarations: [
@@ -59,18 +60,23 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     MainComponent,
     formArrayComponent,
     MeroFormComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ count: counter }),
+    StoreModule.forRoot({}),
     ReactiveFormsModule,
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: !isDevMode(),
+      autoPause: true,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
