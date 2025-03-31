@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -30,6 +30,8 @@ import { LearningRxjsComponent } from './learning-rxjs/learning-rxjs.component';
 import { MainComponent } from './NGRX/main/main.component';
 import { formArrayComponent } from './form-array/form-array.component';
 import { MeroFormComponent } from './mero-form/mero-form.component';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { MeroFormComponent } from './mero-form/mero-form.component';
     FormsModule,
     HttpClientModule,
     StoreModule.forRoot({ count: counter }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],
   bootstrap: [AppComponent]
