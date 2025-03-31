@@ -1,7 +1,13 @@
 <div class="container mt-5">
-  <form [formGroup]="developerForm" (ngSubmit)="onSubmit()" class="rounded shadow p-5">
+    <!-- FORM -->
+  <form [formGroup]="developerForm" (ngSubmit)="onSubmit()" class="rounded shadow p-5" [hidden]="isSubmitted">
     <!-- Your Skills?(if any) -->
-    <h4 class="fw-bold">Skills:</h4>
+    <h4 class="fw-bold">Skills:
+    <!-- Add -->
+    <button type="button" class="btn btn-success" (click)="addSkill()">
+        <i class="bx bx-plus-circle">Add</i>
+    </button>
+    </h4>
     <div formArrayName="skills">
       <div
         *ngFor="let skill of skills.controls; let i = index"
@@ -30,18 +36,40 @@
         <!-- Delete -->
         <div class="col-md-2 text-center">
           <button type="button" class="btn btn-danger" (click)="removeSkill(i)">
-            X
+            -
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Add -->
-    <button type="button" class="btn btn-success mt-3" (click)="addSkill()">
-      <i class="bx bx-plus-circle"></i> Add Skill
-    </button>
-
     <!-- Submit -->
-    <button type="submit" class="btn btn-primary mt-3 float-end">Submit</button>
+    <button type="submit" class="btn btn-primary m-1 float-end">Submit</button>
   </form>
 </div>
+
+<!-- SHOW -->
+<div class="container mt-5" [hidden]="!isSubmitted">
+    <h2>Your Skills:</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Skill Name</th>
+              <th>Skill Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let skill of developerForm.value.skills">
+              <td>{{ skill.name }}</td>
+              <td>{{ skill.level }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <button type="button" class="btn btn-primary mt-3" (click)="isSubmitted = false">
+      Edit
+    </button>
+  </div>

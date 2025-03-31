@@ -8,10 +8,10 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class MultipleFormArrayComponent {
   developerForm: FormGroup; 
+  isSubmitted = false;
 
   constructor(private fb: FormBuilder) {
     this.developerForm = this.fb.group({
-      role: ['FrontEnd Dev', Validators.required], 
       skills: this.fb.array([]) 
     });
   }
@@ -34,8 +34,7 @@ export class MultipleFormArrayComponent {
 
   onSubmit() {
     if (this.developerForm.valid) {
-      console.log(this.developerForm.value);
-      alert('Form Submitted Successfully!');
+      this.isSubmitted = true;
     } else {
       alert('Please fill out all required fields.');
     }
