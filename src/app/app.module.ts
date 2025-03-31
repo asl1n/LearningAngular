@@ -29,6 +29,7 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { LearningRxjsComponent } from './learning-rxjs/learning-rxjs.component';
 import { MainComponent } from './NGRX/main/main.component';
 import { formArrayComponent } from './form-array/form-array.component';
+import { MeroFormComponent } from './mero-form/mero-form.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { formArrayComponent } from './form-array/form-array.component';
     LearningRxjsComponent,
     MainComponent,
     formArrayComponent,
+    MeroFormComponent,
   ],
   imports: [
     BrowserModule,
