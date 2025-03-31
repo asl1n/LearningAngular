@@ -1,14 +1,21 @@
 <div class="container mt-5">
-    <!-- FORM -->
-  <form [formGroup]="developerForm" (ngSubmit)="onSubmit()" class="rounded shadow p-5" [hidden]="isSubmitted">
+  <!-- FORM -->
+  <form
+    [formGroup]="developerForm"
+    (ngSubmit)="onSubmit()"
+    class="rounded shadow p-5"
+    [hidden]="isSubmitted"
+  >
     <!-- Your Skills?(if any) -->
-    <h4 class="fw-bold">Skills:
-    <!-- Add -->
-    <button type="button" class="btn btn-success" (click)="addSkill()">
+    <h4 class="fw-bold">
+      Skills:
+      <!-- Add -->
+      <button type="button" class="btn btn-success" (click)="addSkill()">
         <i class="bx bx-plus-circle">Add</i>
-    </button>
+      </button>
     </h4>
-    <div formArrayName="skills">
+    <!-- Form body -->
+    <div formArrayName="skills" class="p-2">
       <div
         *ngFor="let skill of skills.controls; let i = index"
         [formGroupName]="i"
@@ -49,27 +56,31 @@
 
 <!-- SHOW -->
 <div class="container mt-5" [hidden]="!isSubmitted">
-    <h2>Your Skills:</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Skill Name</th>
-              <th>Skill Level</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let skill of developerForm.value.skills">
-              <td>{{ skill.name }}</td>
-              <td>{{ skill.level }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <h2>Your Skills:</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Skill Name</th>
+            <th>Skill Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let skill of developerForm.value.skills">
+            <td>{{ skill.name }}</td>
+            <td>{{ skill.level }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  
-    <button type="button" class="btn btn-primary mt-3" (click)="isSubmitted = false">
-      Edit
-    </button>
   </div>
+
+  <button
+    type="button"
+    class="btn btn-primary mt-3"
+    (click)="isSubmitted = false"
+  >
+    Edit
+  </button>
+</div>
