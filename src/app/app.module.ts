@@ -33,6 +33,7 @@ import { MeroFormComponent } from './mero-form/mero-form.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { PostComponent } from './post/post/post.component';
+import { MultipleFormArrayComponent } from './multiple-form-array/multiple-form-array.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { PostComponent } from './post/post/post.component';
     formArrayComponent,
     MeroFormComponent,
     PostComponent,
+    MultipleFormArrayComponent,
   ],
   imports: [
     BrowserModule,

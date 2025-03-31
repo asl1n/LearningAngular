@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <form [formGroup]="developerForm" (ngSubmit)="onSubmit()" class="rounded shadow p-5">
+    <!-- Your Skills?(if any) -->
+    <h4 class="fw-bold">Skills:</h4>
+    <div formArrayName="skills">
+      <div
+        *ngFor="let skill of skills.controls; let i = index"
+        [formGroupName]="i"
+        class="row g-2 align-items-center mb-2"
+      >
+        <!-- Skill Name -->
+        <div class="col-md-5">
+          <input
+            formControlName="name"
+            class="form-control"
+            placeholder="Enter a skill"
+          />
+        </div>
+
+        <!-- Skill Level -->
+        <div class="col-md-5">
+          <select formControlName="level" class="form-select">
+            <option value="" disabled selected>What's your level?</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Expert">Expert</option>
+          </select>
+        </div>
+
+        <!-- Delete -->
+        <div class="col-md-2 text-center">
+          <button type="button" class="btn btn-danger" (click)="removeSkill(i)">
+            X
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add -->
+    <button type="button" class="btn btn-success mt-3" (click)="addSkill()">
+      <i class="bx bx-plus-circle"></i> Add Skill
+    </button>
+
+    <!-- Submit -->
+    <button type="submit" class="btn btn-primary mt-3 float-end">Submit</button>
+  </form>
+</div>
