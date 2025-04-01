@@ -34,6 +34,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { PostComponent } from './post/post/post.component';
 import { MultipleFormArrayComponent } from './multiple-form-array/multiple-form-array.component';
+import { TimePassComponent } from './time-pass/time-pass.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { MultipleFormArrayComponent } from './multiple-form-array/multiple-form-
     MeroFormComponent,
     PostComponent,
     MultipleFormArrayComponent,
+    TimePassComponent,
   ],
   imports: [
     BrowserModule,
