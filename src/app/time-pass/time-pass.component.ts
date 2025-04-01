@@ -8,21 +8,34 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class TimePassComponent {
   meroForm: FormGroup;
-  choices= ['Complaining','Checking','Need Support'];
+  choices = ['Complaining', 'Checking', 'Need Support'];
 
   constructor(private fb: FormBuilder) {
-    this.meroForm = fb.group({
+    this.meroForm = this.fb.group({
       name: ['', Validators.required],
       message: ['', Validators.required],
-      choice: ['', Validators.required]
+      choice: ['', Validators.required],
     });
   }
 
   submit() {
     if (this.meroForm.invalid) {
-      alert('Please enter a name and message');
-    } else {
-      console.log('done');
+      alert('Do it Properly');
+      return;
     }
+
+    const { choice } = this.meroForm.value;
+    console.log(
+      `${
+        choice === 'Complaining'
+          ? 'Complaining'
+          : choice === 'Checking'
+          ? 'Checking'
+          : 'Support needed'
+      }:`,
+      this.meroForm.value
+    );
+
+    this.meroForm.reset();
   }
 }

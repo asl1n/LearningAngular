@@ -1,9 +1,36 @@
 <h2>Welcome to my Page!</h2>
-<form (ngSubmit)="submit()">
+<form [formGroup]="meroForm" (ngSubmit)="submit()">
   <label>Your Name</label>
-  <input type="text" [(ngModel)]="name" name="title" /><br />
+  <input type="text" formControlName="name" /><br />
+  <div
+    *ngIf="meroForm.get('name')?.invalid && meroForm.get('name')?.touched"
+    style="color: red"
+  >
+    Name is required.
+  </div>
+  <br />
   <label>Say something:</label>
-  <input type="text" [(ngModel)]="message" name="message" /><br />
-  <select name="title" *ngFor="let choice of choices">{{ choice }}</select>
+  <input type="text" formControlName="message" /><br />
+  <div
+    *ngIf="meroForm.get('message')?.invalid && meroForm.get('message')?.touched"
+    style="color: red"
+  >
+    Enter a message!
+  </div>
+  <br />
+  <label>Choose an Option:</label>
+  <select formControlName="choice">
+    <option value="">Select</option>
+    <option *ngFor="let choice of choices" [value]="choice">
+      {{ choice }}
+    </option>
+  </select>
+  <div
+    *ngIf="meroForm.get('choice')?.invalid && meroForm.get('choice')?.touched"
+    style="color: red"
+  >
+    Please select an option.
+  </div>
+
   <button type="submit">Submit</button>
 </form>
