@@ -32,8 +32,11 @@ export class TimePassComponent {
           : choice === 'Checking'
           ? 'Checking'
           : 'Support needed'
-      }:`,
-      this.meroForm.value
+      } Report:\n`,
+      'Name:',
+      this.meroForm.value.name,
+      'Message:',
+      this.meroForm.value.message
     );
 
     this.meroForm.reset();
