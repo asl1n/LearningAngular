@@ -35,6 +35,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { PostComponent } from './post/post/post.component';
 import { MultipleFormArrayComponent } from './multiple-form-array/multiple-form-array.component';
 import { TimePassComponent } from './time-pass/time-pass.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -75,11 +76,12 @@ import { TimePassComponent } from './time-pass/time-pass.component';
     ReactiveFormsModule,
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: !isDevMode(),
-      autoPause: true,
+        maxAge: 25,
+        logOnly: !isDevMode(),
+        autoPause: true,
     }),
-  ],
+    LayoutComponent
+],
   providers: [],
   bootstrap: [AppComponent],
 })
