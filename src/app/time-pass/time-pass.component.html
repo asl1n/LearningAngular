@@ -1,8 +1,9 @@
 <h2>Welcome to my Page!</h2>
-<form>
-    <label>Your Name</label>
-    <input type="text" [(ngModel)]="name" name="title"><br/>
-    <label>Say something:</label>
-    <input type="text" [(ngModel)]="message" name="message"><br/>
-    <button type="button" (click)="submit()">Submit</button>
+<form (ngSubmit)="submit()">
+  <label>Your Name</label>
+  <input type="text" [(ngModel)]="name" name="title" /><br />
+  <label>Say something:</label>
+  <input type="text" [(ngModel)]="message" name="message" /><br />
+  <select name="title" *ngFor="let choice of choices">{{ choice }}</select>
+  <button type="submit">Submit</button>
 </form>
